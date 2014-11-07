@@ -34,10 +34,10 @@ var managers;
         Collision.prototype.shipAndEnemy = function (enemy) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.ship.image.x;
-            p1.y = this.ship.image.y;
-            p2.x = enemy.image.x;
-            p2.y = enemy.image.y;
+            p1.x = this.ship.x;
+            p1.y = this.ship.y;
+            p2.x = enemy.x;
+            p2.y = enemy.y;
             if (this.distance(p1, p2) < ((this.ship.height / 2) + (enemy.height / 2))) {
                 createjs.Sound.play("explosionFX");
                 this.scoreboard.lives -= 1;
@@ -49,10 +49,10 @@ var managers;
         Collision.prototype.shipAndPowerUp = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.ship.image.x;
-            p1.y = this.ship.image.y;
-            p2.x = this.powerUp.image.x;
-            p2.y = this.powerUp.image.y;
+            p1.x = this.ship.x;
+            p1.y = this.ship.y;
+            p2.x = this.powerUp.x;
+            p2.y = this.powerUp.y;
             if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.powerUp.height / 2))) {
                 createjs.Sound.play("powerUpFX");
                 this.scoreboard.score += 100;

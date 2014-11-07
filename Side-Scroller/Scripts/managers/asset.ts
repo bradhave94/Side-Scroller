@@ -41,7 +41,6 @@
 
         public static loader;
         public static atlas: createjs.SpriteSheet;
-        public static power: createjs.SpriteSheet;
 
         public static init() {
             createjs.Sound.initializeDefaultPlugins();

@@ -22,8 +22,10 @@ module states {
     }
 
     export function menu() {
-        var gameNameLabel: objects.Label;
-
+        var intructionsOne: objects.Label;
+        var intructionsTwo: objects.Label;
+        var intructionsThree: objects.Label;
+        var intructionsFour: objects.Label;
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -35,8 +37,17 @@ module states {
         stage.cursor = "default";
 
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "SHOOTER");
-        game.addChild(gameNameLabel);
+        intructionsOne = new objects.Label(stage.canvas.width / 2, 60, "WELCOME! This is a basic game.");
+        game.addChild(intructionsOne);
+
+        intructionsTwo = new objects.Label(stage.canvas.width / 2, 500, "Aviod the bad guys");
+        game.addChild(intructionsTwo);
+
+        intructionsThree = new objects.Label(stage.canvas.width / 2, 575, "While trying to collect the power ups!");
+        game.addChild(intructionsThree);
+
+        intructionsFour = new objects.Label(stage.canvas.width / 2, 650, "GOODLUCK!");
+        game.addChild(intructionsFour);
 
         // Display Play Again Button
         playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");

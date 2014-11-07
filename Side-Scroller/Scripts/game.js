@@ -1,5 +1,6 @@
 ﻿/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
+/// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/enemy.ts" />
 /// <reference path="objects/powerup.ts" />
 /// <reference path="objects/background.ts" />

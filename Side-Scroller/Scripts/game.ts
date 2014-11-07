@@ -1,11 +1,10 @@
 ﻿/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
+/// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/enemy.ts" />
 /// <reference path="objects/powerup.ts" />
 /// <reference path="objects/background.ts" />
 /// <reference path="objects/ship.ts" />
-
-
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />

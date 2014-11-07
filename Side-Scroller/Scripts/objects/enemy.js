@@ -1,40 +1,40 @@
-﻿/// <reference path="../managers/asset.ts" />
+﻿var __extends = this.__extends || function (d, b) {
+    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
+    function __() { this.constructor = d; }
+    __.prototype = b.prototype;
+    d.prototype = new __();
+};
+/// <reference path="../managers/asset.ts" />
 var objects;
 (function (objects) {
     // Enemy class
-    var Enemy = (function () {
+    var Enemy = (function (_super) {
+        __extends(Enemy, _super);
         function Enemy(stage, game) {
-            this.stage = stage;
-            this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "enemy");
-            this.width = this.image.getBounds().width;
-            this.height = this.image.getBounds().height;
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
+            _super.call(this, "enemy");
             this.reset();
-
-            game.addChild(this.image);
+            game.addChild(this);
         }
         Enemy.prototype.update = function () {
-            this.image.y -= this.dy;
-            this.image.x -= this.dx;
-            if (this.image.x < -100 + this.width) {
+            this.y -= this.dy;
+            this.x -= this.dx;
+            if (this.x < -100 + this.width) {
                 this.reset();
             }
         };
 
         Enemy.prototype.reset = function () {
-            this.image.y = Math.floor(Math.random() * stage.canvas.height);
-            this.image.x = stage.canvas.width + this.width;
+            this.y = Math.floor(Math.random() * stage.canvas.height);
+            this.x = stage.canvas.width + this.width;
             this.dy = Math.floor(Math.random() * 4 - 2);
             this.dx = Math.floor(Math.random() * 6 + 8);
         };
 
         Enemy.prototype.destroy = function () {
-            game.removeChild(this.image);
+            game.removeChild(this);
         };
         return Enemy;
-    })();
+    })(objects.GameObject);
     objects.Enemy = Enemy;
 })(objects || (objects = {}));
 //# sourceMappingURL=enemy.js.map
