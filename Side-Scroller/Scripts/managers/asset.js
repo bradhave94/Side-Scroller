@@ -3,9 +3,9 @@
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "background", src: "assets/images/bg.jpg" },
-        { id: "engine", src: "assets/sounds/engine.ogg" },
-        { id: "thunder", src: "assets/sounds/thunder.ogg" },
-        { id: "yay", src: "assets/sounds/yay.ogg" }
+        { id: "explosionFX", src: "assets/sounds/explosionFX.mp3" },
+        { id: "soundtrack", src: "assets/sounds/soundtrack.mp3" },
+        { id: "powerUpFX", src: "assets/sounds/powerUpFX.mp3" }
     ];
 
     // SpriteSheet Data Object

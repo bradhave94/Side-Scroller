@@ -18,7 +18,7 @@ module objects {
             this.image.regX = this.width / 2;
             this.image.regY = this.height / 2;
             game.addChild(this.image);
-            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            this.engineSound = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
 
 

@@ -62,10 +62,9 @@
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\bg.jpg" />
     <Content Include="assets\images\powerUp.png" />
-    <Content Include="assets\sounds\engine.ogg" />
-    <Content Include="assets\sounds\sondtrack.mp3" />
-    <Content Include="assets\sounds\thunder.ogg" />
-    <Content Include="assets\sounds\yay.ogg" />
+    <Content Include="assets\sounds\explosionFX.mp3" />
+    <Content Include="assets\sounds\powerUpFX.mp3" />
+    <Content Include="assets\sounds\soundtrack.mp3" />
     <Content Include="Scripts\constants.js.map" />
     <Content Include="Scripts\game.js.map" />
     <Content Include="Scripts\managers\asset.js.map" />

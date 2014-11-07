@@ -6,10 +6,10 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(ship, island, enemies, scoreboard) {
+        function Collision(ship, powerUp, enemies, scoreboard) {
             this.enemies = [];
             this.ship = ship;
-            this.powerUp = island;
+            this.powerUp = powerUp;
             this.enemies = enemies;
             this.scoreboard = scoreboard;
         }
@@ -30,23 +30,23 @@ var managers;
             return result;
         };
 
-        // check collision between plane and any cloud object
-        Collision.prototype.planeAndCloud = function (cloud) {
+        // check collision between ship and any enemy object
+        Collision.prototype.shipAndEnemy = function (enemy) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
             p1.x = this.ship.image.x;
             p1.y = this.ship.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.ship.height / 2) + (cloud.height / 2))) {
-                createjs.Sound.play("thunder");
+            p2.x = enemy.image.x;
+            p2.y = enemy.image.y;
+            if (this.distance(p1, p2) < ((this.ship.height / 2) + (enemy.height / 2))) {
+                createjs.Sound.play("explosionFX");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                enemy.reset();
             }
         };
 
-        // check collision between plane and island
-        Collision.prototype.planeAndIsland = function () {
+        // check collision between shipand power up
+        Collision.prototype.shipAndPowerUp = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
             p1.x = this.ship.image.x;
@@ -54,7 +54,7 @@ var managers;
             p2.x = this.powerUp.image.x;
             p2.y = this.powerUp.image.y;
             if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.powerUp.height / 2))) {
-                createjs.Sound.play("yay");
+                createjs.Sound.play("powerUpFX");
                 this.scoreboard.score += 100;
                 this.powerUp.reset();
             }
@@ -62,10 +62,10 @@ var managers;
 
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.enemies[count]);
+            for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                this.shipAndEnemy(this.enemies[count]);
             }
-            this.planeAndIsland();
+            this.shipAndPowerUp();
         };
         return Collision;
     })();

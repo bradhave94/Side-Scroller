@@ -13,7 +13,7 @@ var states;
         powerUp.update();
         ship.update();
 
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ENEMY_NUM; count++) {
             enemies[count].update();
         }
 
@@ -44,7 +44,7 @@ var states;
         // Show Cursor
         stage.cursor = "none";
 
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ENEMY_NUM; count++) {
             enemies[count] = new objects.Enemy(stage, game);
         }
 

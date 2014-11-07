@@ -23,7 +23,7 @@ var game: createjs.Container;
 var background: objects.Background;
 var ship: objects.Ship;
 var powerUp: objects.PowerUp;
-var enemies = []; // Clouds array;
+var enemies = []; // Enemies array;
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;
