@@ -72,12 +72,8 @@
     <Content Include="Scripts\managers\collision.js.map" />
     <Content Include="Scripts\objects\background.js" />
     <Content Include="Scripts\objects\button.js" />
-    <Content Include="Scripts\objects\cloud.js" />
     <Content Include="Scripts\objects\enemy.js" />
-    <Content Include="Scripts\objects\island.js" />
     <Content Include="Scripts\objects\label.js" />
-    <Content Include="Scripts\objects\ocean.js" />
-    <Content Include="Scripts\objects\plane.js" />
     <Content Include="Scripts\objects\powerUp.js" />
     <Content Include="Scripts\objects\scoreboard.js" />
     <Content Include="Scripts\objects\ship.js" />
@@ -86,12 +82,8 @@
     <Content Include="Scripts\states\play.js.map" />
     <Content Include="Scripts\objects\background.js.map" />
     <Content Include="Scripts\objects\button.js.map" />
-    <Content Include="Scripts\objects\cloud.js.map" />
     <Content Include="Scripts\objects\enemy.js.map" />
-    <Content Include="Scripts\objects\island.js.map" />
     <Content Include="Scripts\objects\label.js.map" />
-    <Content Include="Scripts\objects\ocean.js.map" />
-    <Content Include="Scripts\objects\plane.js.map" />
     <Content Include="Scripts\objects\powerUp.js.map" />
     <Content Include="Scripts\objects\scoreboard.js.map" />
     <Content Include="Scripts\objects\ship.js.map" />

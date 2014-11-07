@@ -12,10 +12,14 @@
     var spriteSheetData = {
         "images": ["assets/images/atlas.png"],
         "frames": [
-            [609, 65, 91, 50],
+            [650, 65, 91, 50],
             [400, 2, 207, 67],
-            [184, 78, 46, 14],
+            [291, 78, 46, 14],
             [609, 2, 205, 61],
+            [609, 65, 39, 53],
+            [400, 71, 38, 48],
+            [184, 78, 52, 39],
+            [238, 78, 51, 39],
             [2, 2, 180, 117],
             [184, 2, 214, 74]
         ],
@@ -24,20 +28,10 @@
             "instructionsButton": [1],
             "missile": [2],
             "playButton": [3],
-            "ship": [4],
-            "tryAgainButton": [5]
+            "powerUp": [4, 7, "powerUp", 0.2],
+            "ship": [8],
+            "tryAgainButton": [9]
         }
-    };
-
-    var powerUpSprit = {
-        "images": ["assets/images/powerUp.png"],
-        "frames": [
-            [2, 2, 39, 53],
-            [43, 2, 38, 48],
-            [83, 2, 52, 39],
-            [137, 2, 51, 39]
-        ],
-        animations: { powerUpSprite: [0, 3, "powerUpSprite", 0.3] }
     };
 
     // Asset Manager Class
@@ -50,7 +44,6 @@
             this.loader.installPlugin(createjs.Sound);
             this.loader.loadManifest(assetManifest);
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
-            this.power = new createjs.SpriteSheet(powerUpSprit);
         };
         return Assets;
     })();
