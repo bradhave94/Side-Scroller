@@ -6,8 +6,9 @@
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
-module states {
-    export function playButtonClicked(event: MouseEvent) {
+var states;
+(function (states) {
+    function playButtonClicked(event) {
         stage.removeChild(game);
         ship.destroy();
         game.removeAllChildren();
@@ -15,14 +16,16 @@ module states {
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
+    states.playButtonClicked = playButtonClicked;
 
-    export function menuState() {
+    function menuState() {
         background.update();
         ship.update();
     }
+    states.menuState = menuState;
 
-    export function menu() {
-        var gameNameLabel: objects.Label;
+    function menu() {
+        var gameNameLabel;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -45,4 +48,6 @@ module states {
 
         stage.addChild(game);
     }
-} 
+    states.menu = menu;
+})(states || (states = {}));
+//# sourceMappingURL=menu.js.map

@@ -6,8 +6,9 @@
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
-module states {
-    export function playState() {
+var states;
+(function (states) {
+    function playState() {
         background.update();
         powerUp.update();
         ship.update();
@@ -28,9 +29,10 @@ module states {
             changeState(currentState);
         }
     }
+    states.playState = playState;
 
     // play state Function
-    export function play(): void {
+    function play() {
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -42,7 +44,6 @@ module states {
         // Show Cursor
         stage.cursor = "none";
 
-        // Create multiple clouds
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
             enemies[count] = new objects.Enemy(stage, game);
         }
@@ -55,4 +56,6 @@ module states {
 
         stage.addChild(game);
     }
-}
+    states.play = play;
+})(states || (states = {}));
+//# sourceMappingURL=play.js.map

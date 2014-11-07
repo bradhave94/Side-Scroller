@@ -4,8 +4,6 @@
 /// <reference path="objects/powerup.ts" />
 /// <reference path="objects/background.ts" />
 /// <reference path="objects/ship.ts" />
-
-
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
@@ -13,35 +11,33 @@
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
-
 // Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
 // Changed online repo
+var stage;
+var game;
 
-var stage: createjs.Stage;
-var game: createjs.Container;
+var background;
+var ship;
+var powerUp;
+var enemies = [];
+var scoreboard;
 
-var background: objects.Background;
-var ship: objects.Ship;
-var powerUp: objects.PowerUp;
-var enemies = []; // Clouds array;
-var scoreboard: objects.Scoreboard;
+var collision;
 
-var collision: managers.Collision;
+var tryAgain;
+var playButton;
 
-var tryAgain: objects.Button;
-var playButton: objects.Button;
-
-var currentState: number;
+var currentState;
 var currentStateFunction;
 
 // Preload function - Loads Assets and initializes game;
-function preload(): void {
+function preload() {
     managers.Assets.init();
     managers.Assets.loader.addEventListener("complete", init);
 }
 
 // init called after Assets have been loaded.
-function init(): void {
+function init() {
     stage = new createjs.Stage(document.getElementById("canvas"));
     stage.enableMouseOver(30);
     createjs.Ticker.setFPS(60);
@@ -60,13 +56,12 @@ function optimizeForMobile() {
 }
 
 // Game Loop
-function gameLoop(event): void {
+function gameLoop(event) {
     currentStateFunction();
     stage.update();
 }
 
-function changeState(state: number): void {
-    // Launch Various "screens"
+function changeState(state) {
     switch (state) {
         case constants.MENU_STATE:
             // instantiate menu screen
@@ -82,13 +77,10 @@ function changeState(state: number): void {
 
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
+
             // instantiate game over screen
             states.gameOver();
             break;
     }
 }
-
-
-
-
-
+//# sourceMappingURL=game.js.map

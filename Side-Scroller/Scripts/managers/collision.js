@@ -2,28 +2,22 @@
 /// <reference path="../objects/powerup.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/ship.ts" />
-
-module managers {
+var managers;
+(function (managers) {
     // Collision Manager Class
-    export class Collision {
-        // class variables
-        private ship: objects.Ship;
-        private powerUp: objects.PowerUp;
-        private enemies = [];
-        private scoreboard: objects.Scoreboard;
-
-        constructor(ship: objects.Ship, island: objects.PowerUp, enemies, scoreboard: objects.Scoreboard) {
+    var Collision = (function () {
+        function Collision(ship, island, enemies, scoreboard) {
+            this.enemies = [];
             this.ship = ship;
             this.powerUp = island;
             this.enemies = enemies;
             this.scoreboard = scoreboard;
         }
-
         // Utility method - Distance calculation between two points
-        private distance(p1: createjs.Point, p2: createjs.Point): number {
-            var result: number = 0;
-            var xPoints: number = 0;
-            var yPoints: number = 0;
+        Collision.prototype.distance = function (p1, p2) {
+            var result = 0;
+            var xPoints = 0;
+            var yPoints = 0;
 
             xPoints = p2.x - p1.x;
             xPoints = xPoints * xPoints;
@@ -34,12 +28,12 @@ module managers {
             result = Math.sqrt(xPoints + yPoints);
 
             return result;
-        }
+        };
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Enemy) {
-            var p1: createjs.Point = new createjs.Point();
-            var p2: createjs.Point = new createjs.Point();
+        Collision.prototype.planeAndCloud = function (cloud) {
+            var p1 = new createjs.Point();
+            var p2 = new createjs.Point();
             p1.x = this.ship.image.x;
             p1.y = this.ship.image.y;
             p2.x = cloud.image.x;
@@ -49,12 +43,12 @@ module managers {
                 this.scoreboard.lives -= 1;
                 cloud.reset();
             }
-        }
+        };
 
         // check collision between plane and island
-        private planeAndIsland() {
-            var p1: createjs.Point = new createjs.Point();
-            var p2: createjs.Point = new createjs.Point();
+        Collision.prototype.planeAndIsland = function () {
+            var p1 = new createjs.Point();
+            var p2 = new createjs.Point();
             p1.x = this.ship.image.x;
             p1.y = this.ship.image.y;
             p2.x = this.powerUp.image.x;
@@ -64,14 +58,17 @@ module managers {
                 this.scoreboard.score += 100;
                 this.powerUp.reset();
             }
-        }
+        };
 
         // Utility Function to Check Collisions
-        update() {
+        Collision.prototype.update = function () {
             for (var count = 0; count < constants.CLOUD_NUM; count++) {
                 this.planeAndCloud(this.enemies[count]);
             }
             this.planeAndIsland();
-        }
-    }
-} 
+        };
+        return Collision;
+    })();
+    managers.Collision = Collision;
+})(managers || (managers = {}));
+//# sourceMappingURL=collision.js.map

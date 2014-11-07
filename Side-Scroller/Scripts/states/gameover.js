@@ -3,31 +3,31 @@
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/powerup.ts" />
 /// <reference path="../objects/label.ts" />
-
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/ship.ts" />
-
-
 /// <reference path="../objects/scoreboard.ts" />
-module states {
-    export function gameOverState() {
+var states;
+(function (states) {
+    function gameOverState() {
         background.update();
     }
+    states.gameOverState = gameOverState;
 
     // Restart Game when Try Again Button is clicked
-    export function tryAgainClicked(event: MouseEvent) {
+    function tryAgainClicked(event) {
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
+    states.tryAgainClicked = tryAgainClicked;
 
     // Game Over Scene
-    export function gameOver() {
-        var gameOverLabel: objects.Label;
-        var finalScoreLabel: objects.Label;
-        var finalScore: objects.Label;
+    function gameOver() {
+        var gameOverLabel;
+        var finalScoreLabel;
+        var finalScore;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -56,6 +56,7 @@ module states {
         tryAgain.addEventListener("click", tryAgainClicked);
 
         stage.addChild(game);
-
     }
-}
+    states.gameOver = gameOver;
+})(states || (states = {}));
+//# sourceMappingURL=gameover.js.map
