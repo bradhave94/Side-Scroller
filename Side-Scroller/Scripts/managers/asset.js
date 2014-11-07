@@ -2,7 +2,6 @@
 (function (managers) {
     // Image and Sound Manifest;
     var assetManifest = [
-        { id: "loading", src: "assets/images/loading.jpg" },
         { id: "background", src: "assets/images/bg.jpg" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
