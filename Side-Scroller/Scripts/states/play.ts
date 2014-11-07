@@ -2,6 +2,7 @@
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/powerup.ts" />
+/// <reference path="../objects/oneup.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -10,6 +11,7 @@ module states {
     export function playState() {
         background.update();
         powerUp.update();
+        oneUp.update();
         ship.update();
 
         for (var count = 0; count < constants.ENEMY_NUM; count++) {
@@ -37,6 +39,7 @@ module states {
         // Instantiate Game Objects
         background = new objects.Background(stage, game);
         powerUp = new objects.PowerUp(stage, game);
+        oneUp = new objects.OneUp(stage, game);
         ship = new objects.Ship(stage, game);
 
         // Show Cursor
@@ -51,7 +54,7 @@ module states {
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(ship, powerUp, enemies, scoreboard);
+        collision = new managers.Collision(ship, powerUp, oneUp, enemies, scoreboard);
 
         stage.addChild(game);
     }

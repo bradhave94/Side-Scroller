@@ -25,5 +25,6 @@
 /// <reference path="objects/enemy.js" />
 /// <reference path="objects/label.js" />
 /// <reference path="objects/powerup.js" />
+/// <reference path="objects/oneup.js" />
 /// <reference path="objects/scoreboard.js" />
 /// <reference path="objects/ship.js" />

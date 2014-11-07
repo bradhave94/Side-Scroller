@@ -1,15 +1,17 @@
 ﻿/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/powerup.ts" />
+/// <reference path="../objects/oneup.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/ship.ts" />
 var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(ship, powerUp, enemies, scoreboard) {
+        function Collision(ship, powerUp, oneUp, enemies, scoreboard) {
             this.enemies = [];
             this.ship = ship;
             this.powerUp = powerUp;
+            this.oneUp = oneUp;
             this.enemies = enemies;
             this.scoreboard = scoreboard;
         }
@@ -60,12 +62,28 @@ var managers;
             }
         };
 
+        // check collision between ship and one up
+        Collision.prototype.shipAndOneUp = function () {
+            var p1 = new createjs.Point();
+            var p2 = new createjs.Point();
+            p1.x = this.ship.x;
+            p1.y = this.ship.y;
+            p2.x = this.oneUp.x;
+            p2.y = this.oneUp.y;
+            if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.oneUp.height / 2))) {
+                createjs.Sound.play("oneUpFX");
+                this.scoreboard.lives += 1;
+                this.oneUp.reset();
+            }
+        };
+
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
             for (var count = 0; count < constants.ENEMY_NUM; count++) {
                 this.shipAndEnemy(this.enemies[count]);
             }
             this.shipAndPowerUp();
+            this.shipAndOneUp();
         };
         return Collision;
     })();

@@ -63,6 +63,8 @@
     <Content Include="assets\images\bg.jpg" />
     <Content Include="assets\images\powerUp.png" />
     <Content Include="assets\sounds\explosionFX.mp3" />
+    <Content Include="assets\sounds\intro.mp3" />
+    <Content Include="assets\sounds\OneUpFX.mp3" />
     <Content Include="assets\sounds\powerUpFX.mp3" />
     <Content Include="assets\sounds\soundtrack.mp3" />
     <Content Include="Scripts\constants.js.map" />
@@ -138,6 +140,7 @@
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\lib\preloadjs.d.ts" />
     <TypeScriptCompile Include="Scripts\lib\soundjs.d.ts" />
+    <TypeScriptCompile Include="Scripts\objects\oneUp.ts" />
     <TypeScriptCompile Include="Scripts\objects\background.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemy.ts" />

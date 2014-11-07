@@ -3,6 +3,7 @@
 /// <reference path="../objects/background.ts" />
 /// <reference path="../objects/ship.ts" />
 /// <reference path="../objects/powerup.ts" />
+/// <reference path="../objects/oneup.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />

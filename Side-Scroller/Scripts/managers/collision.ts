@@ -1,5 +1,6 @@
 ﻿/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/powerup.ts" />
+/// <reference path="../objects/oneup.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/ship.ts" />
 
@@ -9,12 +10,14 @@ module managers {
         // class variables
         private ship: objects.Ship;
         private powerUp: objects.PowerUp;
+        private oneUp: objects.OneUp;
         private enemies = [];
         private scoreboard: objects.Scoreboard;
 
-        constructor(ship: objects.Ship, powerUp: objects.PowerUp, enemies, scoreboard: objects.Scoreboard) {
+        constructor(ship: objects.Ship, powerUp: objects.PowerUp, oneUp: objects.OneUp, enemies, scoreboard: objects.Scoreboard) {
             this.ship = ship;
             this.powerUp = powerUp;
+            this.oneUp = oneUp;
             this.enemies = enemies;
             this.scoreboard = scoreboard;
         }
@@ -66,12 +69,28 @@ module managers {
             }
         }
 
+        // check collision between ship and one up
+        private shipAndOneUp() {
+            var p1: createjs.Point = new createjs.Point();
+            var p2: createjs.Point = new createjs.Point();
+            p1.x = this.ship.x;
+            p1.y = this.ship.y;
+            p2.x = this.oneUp.x;
+            p2.y = this.oneUp.y;
+            if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.oneUp.height / 2))) {
+                createjs.Sound.play("oneUpFX");
+                this.scoreboard.lives += 1;
+                this.oneUp.reset();
+            }
+        }
+
         // Utility Function to Check Collisions
         update() {
             for (var count = 0; count < constants.ENEMY_NUM; count++) {
                 this.shipAndEnemy(this.enemies[count]);
             }
             this.shipAndPowerUp();
+            this.shipAndOneUp();
         }
     }
 } 

@@ -8,5 +8,5 @@
     export var ENEMY_NUM: number = 10;
     export var LABEL_FONT = "40px Consolas";
     export var LABEL_COLOUR = "#458B00";
-    export var SHIP_LIVES = 300000;
+    export var SHIP_LIVES = 1;
 }

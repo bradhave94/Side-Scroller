@@ -15,13 +15,13 @@ var objects;
             this.x = 100;
 
             game.addChild(this);
-            this.engineSound = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            this.soundtrack = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
         Ship.prototype.update = function () {
             this.y = this.stage.mouseY;
         };
         Ship.prototype.destroy = function () {
-            this.engineSound.stop();
+            this.soundtrack.stop();
             game.removeChild(this);
         };
         return Ship;

@@ -3,6 +3,7 @@
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/enemy.ts" />
 /// <reference path="objects/powerup.ts" />
+/// <reference path="objects/oneup.ts" />
 /// <reference path="objects/background.ts" />
 /// <reference path="objects/ship.ts" />
 /// <reference path="objects/scoreboard.ts" />
@@ -20,6 +21,8 @@ var game;
 var background;
 var ship;
 var powerUp;
+var oneUp;
+
 var enemies = [];
 var scoreboard;
 

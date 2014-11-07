@@ -4,19 +4,30 @@
         { id: "background", src: "assets/images/bg.jpg" },
         { id: "explosionFX", src: "assets/sounds/explosionFX.mp3" },
         { id: "soundtrack", src: "assets/sounds/soundtrack.mp3" },
-        { id: "powerUpFX", src: "assets/sounds/powerUpFX.mp3" }
+        { id: "powerUpFX", src: "assets/sounds/powerUpFX.mp3" },
+        { id: "oneUpFX", src: "assets/sounds/OneUpFX.mp3" },
+        { id: "intro", src: "assets/sounds/intro.mp3" }
     ];
 
     // SpriteSheet Data Object
     var spriteSheetData = {
         "images": ["assets/images/atlas.png"],
         "frames": [
-            [650, 65, 91, 50],
+            [816, 2, 54, 52],
+            [814, 65, 91, 50],
+            [558, 71, 36, 48],
+            [462, 71, 54, 48],
+            [714, 65, 57, 54],
+            [654, 65, 58, 54],
+            [400, 71, 60, 48],
+            [596, 71, 56, 45],
+            [291, 78, 47, 36],
             [400, 2, 207, 67],
-            [291, 78, 46, 14],
+            [340, 94, 39, 11],
+            [340, 78, 46, 14],
             [609, 2, 205, 61],
-            [609, 65, 39, 53],
-            [400, 71, 38, 48],
+            [773, 65, 39, 53],
+            [518, 71, 38, 48],
             [184, 78, 52, 39],
             [238, 78, 51, 39],
             [2, 2, 180, 117],
@@ -24,13 +35,22 @@
         ],
         "animations": {
 
-            "enemy": [0],
-            "instructionsButton": [1],
-            "missile": [2],
-            "playButton": [3],
-            "powerUp": [4, 7, "powerUp", 0.2],
-            "ship": [8],
-            "tryAgainButton": [9]
+            "oneUp": [0],
+            "enemy": [1],
+            "explosion1": [2],
+            "explosion2": [3],
+            "explosion3": [4],
+            "explosion4": [5],
+            "explosion5": [6],
+            "explosion6": [7],
+            "explosion7": [8],
+            "instructionsButton": [9],
+            "laser": [10],
+            "missile": [11],
+            "playButton": [12],
+            "powerUp": [13, 16, "powerUp", 0.2],
+            "ship": [17],
+            "tryAgainButton": [18]
         }
     }
   
