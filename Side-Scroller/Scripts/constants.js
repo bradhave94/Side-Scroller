@@ -6,9 +6,9 @@
     constants.GAME_OVER_STATE = 2;
 
     // Game Constants
-    constants.ENEMY_NUM = 10;
+    constants.ENEMY_NUM = 8;
     constants.LABEL_FONT = "40px Consolas";
     constants.LABEL_COLOUR = "#458B00";
-    constants.SHIP_LIVES = 1;
+    constants.SHIP_LIVES = 3;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

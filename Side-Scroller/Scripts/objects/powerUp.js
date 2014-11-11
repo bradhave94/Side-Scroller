@@ -27,7 +27,7 @@ var objects;
 
         PowerUp.prototype.reset = function () {
             this.y = Math.floor(Math.random() * stage.canvas.height);
-            this.x = stage.canvas.width;
+            this.x = stage.canvas.width + 300;
         };
 
         PowerUp.prototype.destroy = function () {

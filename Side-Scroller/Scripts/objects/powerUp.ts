@@ -21,7 +21,7 @@ module objects {
 
         reset() {
             this.y = Math.floor(Math.random() * stage.canvas.height);
-            this.x = stage.canvas.width;
+            this.x = stage.canvas.width + 300;
         }
 
         destroy() {

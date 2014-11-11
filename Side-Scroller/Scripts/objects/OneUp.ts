@@ -14,14 +14,14 @@ module objects {
 
         update() {
             this.x -= this.dx;
-            if (this.x < -10 + this.width) {
+            if (this.x < -500 + this.width) {
                 this.reset();
             }
         }
 
         reset() {
             this.y = Math.floor(Math.random() * stage.canvas.height);
-            this.x = stage.canvas.width;
+            this.x = stage.canvas.width + 10000;
         }
 
         destroy() {

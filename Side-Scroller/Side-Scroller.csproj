@@ -61,7 +61,6 @@
   <ItemGroup>
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\bg.jpg" />
-    <Content Include="assets\images\powerUp.png" />
     <Content Include="assets\sounds\explosionFX.mp3" />
     <Content Include="assets\sounds\intro.mp3" />
     <Content Include="assets\sounds\OneUpFX.mp3" />
