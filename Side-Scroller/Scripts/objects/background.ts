@@ -1,4 +1,13 @@
-﻿/// <reference path="../managers/asset.ts" />
+﻿/*
+   Programmed By: Bradley Haveman
+    Site Name: Side Scroller
+    File Name: background.ts
+    Date: November 10th 2014
+    Decription: This filehold the background object
+*/
+
+
+/// <reference path="../managers/asset.ts" />
 module objects {
     // Background Class
     export class Background extends createjs.Bitmap {
@@ -7,6 +16,7 @@ module objects {
         width: number;
         height: number;
         dy: number;
+        //initialize object
         constructor(stage: createjs.Stage, game: createjs.Container) {
             super(managers.Assets.loader.getResult("background"));
             this.stage = stage;
@@ -16,15 +26,18 @@ module objects {
             
             this.dy = 5;
 
+            //add to the stage
             game.addChild(this);
-
+            
             this.reset();
         }
 
+        //this method resets the background to its original position
         reset() {
             this.x = -1;
         }
 
+        //This method constanlu updats the backgroud position
         update() {
             this.x -= this.dy;
             if (this.x <= -1920) {
@@ -32,7 +45,9 @@ module objects {
             }
         }
 
+        //Removes the background
         destroy() {
+            
             game.removeChild(this);
         }
     }

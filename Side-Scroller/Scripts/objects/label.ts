@@ -1,4 +1,12 @@
-﻿/// <reference path="../constants.ts" />
+﻿/*
+   Programmed By: Bradley Haveman
+    Site Name: Side Scroller
+    File Name: label.ts
+    Date: November 10th 2014
+    Decription: hold label object
+*/
+
+/// <reference path="../constants.ts" />
 module objects {
     export class Label extends createjs.Text {
         constructor(x:number,y:number,labelText:string) {

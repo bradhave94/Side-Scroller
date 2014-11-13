@@ -1,4 +1,11 @@
-﻿/// <reference path="constants.ts" />
+﻿/*
+Programmed By: Bradley Haveman
+Site Name: Side Scroller
+File Name: game.ts
+Date: November 10th 2014
+Decription: This file holds the main logic of the game.
+*/
+/// <reference path="constants.ts" />
 /// <reference path="managers/asset.ts" />
 /// <reference path="objects/gameobject.ts" />
 /// <reference path="objects/enemy.ts" />
@@ -13,10 +20,10 @@
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
+/// <reference path="states/win.ts" />
 var stage;
 var game;
+var soundtrack;
 
 var background;
 var ship;
@@ -46,6 +53,7 @@ function init() {
     stage.enableMouseOver(30);
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
+    this.soundtrack = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
     optimizeForMobile();
 
     currentState = constants.MENU_STATE;
@@ -83,7 +91,15 @@ function changeState(state) {
             currentStateFunction = states.gameOverState;
 
             // instantiate game over screen
+            this.soundtrack.stop();
             states.gameOver();
+            break;
+
+        case constants.WIN_STATE:
+            currentStateFunction = states.winState;
+
+            // instantiate game over screen
+            states.win();
             break;
     }
 }

@@ -1,4 +1,11 @@
-﻿var managers;
+﻿/*
+Programmed By: Bradley Haveman
+Site Name: Side Scroller
+File Name: assests.ts
+Date: November 10th 2014
+Decription: this file contains all the images and sound for my game
+*/
+var managers;
 (function (managers) {
     // Image and Sound Manifest;
     var assetManifest = [

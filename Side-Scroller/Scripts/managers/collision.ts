@@ -1,4 +1,12 @@
-﻿/// <reference path="../objects/enemy.ts" />
+﻿/*
+   Programmed By: Bradley Haveman
+    Site Name: Side Scroller
+    File Name: collision.ts
+    Date: November 10th 2014
+    Decription: This file implement the collision logic
+*/
+
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/powerup.ts" />
 /// <reference path="../objects/oneup.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -65,7 +73,9 @@ module managers {
             if (this.distance(p1, p2) < ((this.ship.height / 2) + (this.powerUp.height / 2))) {
                 createjs.Sound.play("powerUpFX");
                 this.scoreboard.score += 100;
+                
                 this.powerUp.reset();
+                
             }
         }
 

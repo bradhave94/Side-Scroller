@@ -18,6 +18,7 @@
 /// <reference path="managers/asset.js" />
 /// <reference path="managers/collision.js" />
 /// <reference path="states/gameover.js" />
+/// <reference path="states/win.js" />
 /// <reference path="states/menu.js" />
 /// <reference path="states/play.js" />
 /// <reference path="objects/background.js" />

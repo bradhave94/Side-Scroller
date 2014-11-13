@@ -1,4 +1,12 @@
-﻿/// <reference path="../constants.ts" />
+﻿/*
+   Programmed By: Bradley Haveman
+    Site Name: Side Scroller
+    File Name: button.ts
+    Date: November 10th 2014
+    Decription: holds the button object
+*/
+
+/// <reference path="../constants.ts" />
 /// <reference path="../managers/asset.ts" />
 module objects {
     export class Button extends createjs.Sprite {
@@ -11,16 +19,19 @@ module objects {
             this.setButtonListeners();
         }
 
+        //Check for events
         setButtonListeners() {
             this.cursor = 'pointer';
             this.on('rollover', this.onButtonOver);
             this.on('rollout', this.onButtonOut);
         }
 
+        //chage the image if mouse is over it
         onButtonOver() {
             this.alpha = 0.8;
         }
 
+        //reset the image to the original
         onButtonOut() {
             this.alpha = 1;
         }

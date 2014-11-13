@@ -47,7 +47,7 @@ module states {
         intructionsThree = new objects.Label(stage.canvas.width / 2, 575, "While trying to collect the power ups!");
         game.addChild(intructionsThree);
 
-        intructionsFour = new objects.Label(stage.canvas.width / 2, 650, "GOODLUCK!");
+        intructionsFour = new objects.Label(stage.canvas.width / 2, 650, "Get to 2000 to win! GOODLUCK");
         game.addChild(intructionsFour);
 
         // Display Play Again Button

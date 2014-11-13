@@ -30,6 +30,15 @@ var states;
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
+
+        if (this.scoreboard.score == constants.WIN_SCORE) {
+            stage.removeChild(game);
+            ship.destroy();
+            game.removeAllChildren();
+            game.removeAllEventListeners();
+            currentState = constants.WIN_STATE;
+            changeState(currentState);
+        }
     }
     states.playState = playState;
 

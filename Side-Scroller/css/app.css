@@ -1,3 +1,10 @@
 ﻿#canvas {
-    border:dashed 1px black;
+
+    margin-left: 330px;
+    margin-top: 75px;
+}
+
+html
+{
+    background-color: black;
 }

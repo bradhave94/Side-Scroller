@@ -1,7 +1,15 @@
-﻿var objects;
+﻿/*
+Programmed By: Bradley Haveman
+Site Name: Side Scroller
+File Name: scoreboard.ts
+Date: November 10th 2014
+Decription: Holds the scoreboard object
+*/
+var objects;
 (function (objects) {
     // Scoreboard Class
     var Scoreboard = (function () {
+        //initialize scoreboard
         function Scoreboard(stage, game) {
             this.labelText = "";
             this.stage = stage;
@@ -15,11 +23,13 @@
 
             game.addChild(this.label);
         }
+        //update the text
         Scoreboard.prototype.update = function () {
             this.labelText = "Lives: " + this.lives.toString() + " Score: " + this.score.toString();
             this.label.text = this.labelText;
         };
 
+        //detroy the text
         Scoreboard.prototype.destroy = function () {
             game.removeChild(this.label);
         };
